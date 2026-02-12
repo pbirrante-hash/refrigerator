@@ -8,7 +8,7 @@ import streamlit as st
 from crewai import Agent, Task, Crew
 import streamlit as st
 
-st.write("Chiavi trovate nei Secrets:", list(st.secrets.keys()))
+#st.write("Chiavi trovate nei Secrets:", list(st.secrets.keys()))
 
 # 1. Configurazione ambiente
 load_dotenv()
@@ -133,5 +133,6 @@ with col2:
         else:
 
             st.warning("Non è stato possibile estrarre dati dalla foto. Riprova con un'immagine più chiara.")
+
 
 
