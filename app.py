@@ -6,11 +6,17 @@ from io import BytesIO
 from dotenv import load_dotenv
 import streamlit as st
 from crewai import Agent, Task, Crew
+import streamlit as st
 
 # 1. Configurazione ambiente
 load_dotenv()
-api_key = os.getenv("GOOGLE_API_KEY")
-os.environ["GEMINI_API_KEY"] = api_key # Necessario per CrewAI
+api_key = st.secrets.get("GEMINI_API_KEY")
+
+if api_key:
+    os.environ["GEMINI_API_KEY"] = api_key
+else:
+    st.error("Chiave API non trovata! Configurala nei Secrets di Streamlit.")
+    st.stop()
 
 st.set_page_config(page_title="Family Fridge Manager AI", layout="wide")
 
@@ -122,4 +128,5 @@ with col2:
                     mime="text/markdown"
                 )
         else:
+
             st.warning("Non è stato possibile estrarre dati dalla foto. Riprova con un'immagine più chiara.")
