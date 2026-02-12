@@ -13,7 +13,7 @@ st.write("Chiavi trovate nei Secrets:", list(st.secrets.keys()))
 # 1. Configurazione ambiente
 load_dotenv()
 #api_key = st.secrets.get("GEMINI_API_KEY")
-api_key = st.secrets.get("GEMINI_API_KEY")
+api_key = st.secrets.get("GOOGLE_API_KEY")
 
 if api_key:
     os.environ["GEMINI_API_KEY"] = api_key
@@ -133,4 +133,5 @@ with col2:
         else:
 
             st.warning("Non è stato possibile estrarre dati dalla foto. Riprova con un'immagine più chiara.")
+
 
