@@ -1,3 +1,5 @@
-python-dotenv
 streamlit
-# aggiungi qui altre librerie se le usi, es: pandas, requests...
+python-dotenv
+crewai
+# Se usi anche strumenti specifici di crewai, aggiungi:
+# crewai[tools]
